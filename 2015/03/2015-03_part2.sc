@@ -2,8 +2,6 @@ import $file.^.^.Util
 
 import scala.annotation.tailrec
 
-val input = Util.readFullInputFile()
-
 @tailrec
 def splitInstructions(instructions: String, firstHalf: String, secondHalf: String): (String, String) = {
   if (instructions.isEmpty)
@@ -27,6 +25,9 @@ def visits(locations: List[(Int, Int)], instructions: String): List[(Int, Int)] 
     visits(locations ++ List((newX, newY)), instructions.tail)
   }
 }
+
+val input = Util.readFullInputFile()
+
 val (santa, robot) = splitInstructions(input, "", "")
 
 val visitedHouses = (visits(List((0, 0)), santa) ++ visits(List((0, 0)), robot)).toSet

@@ -2,8 +2,6 @@ import $file.^.^.Util
 
 import scala.annotation.tailrec
 
-val input = Util.readFullInputFile()
-
 @tailrec
 def findEnterBasementPosition(
     i: String,
@@ -17,6 +15,8 @@ def findEnterBasementPosition(
   if (newLevel == -1) currentPosition + 1
   else findEnterBasementPosition(i.tail, currentPosition + 1, newLevel)
 }
+
+val input = Util.readFullInputFile()
 
 val enterBasementPosition = findEnterBasementPosition(input, 0, 0)
 
