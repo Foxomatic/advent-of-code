@@ -8,3 +8,7 @@ def printSolution(solution: Any): Unit = {
   println("The solution is:")
   println(solution.toString)
 }
+
+implicit class StringUtils(val string: String) {
+  def isNumeric: Boolean = string forall Character.isDigit
+}
